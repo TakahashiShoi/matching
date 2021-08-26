@@ -4,24 +4,20 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class User extends Migration
+class CreatePeopleTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->increments('id')->primary();
+        Schema::create('people', function (Blueprint $table) {
+            $table->increments('id');
             $table->text('name');
-            $table->varchar('mail', 100)->unique();
+            $table->string('mail');
             $table->text('pass');
             $table->text('add_1');
             $table->text('add_2');
-            $table->integer('birth_year', 11);
-            $table->integer('gender', 11);
+            $table->integer('birth_year');
+            $table->integer('gender');
         });
     }
 
@@ -32,6 +28,6 @@ class User extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('people');
     }
 }
