@@ -49,6 +49,20 @@
                 </div>
             </div>
             </div>
+            {{-- {!! Form::select('prefecture',{$items->name},old('prefecture'),['class' => 'form-control','id' => 'prefecture','placeholder' => '▼都道府県']) !!} --}}
+            {{-- 市区町村のプルダウンメニュー --}}
+            <h4>お住まい</h4>
+            <form action="prefecture" old="prefecture" class="form-control" id="prefecture">
+                <select>
+                    <option value="" style="display: none;">▼都道府県</option>
+                    @foreach ($items as $item)
+                    <option>{{$item->name}}</option>
+                    @endforeach
+                </select>
+            </form>
+            <select name="city" id="city" class="form-control">
+                <option value=""></option>
+            </select>
             <div class="row">
                 <h4>Payment Details</h4>
             <div class="col-half">
@@ -72,7 +86,7 @@
                 </div>
             </div>
         </form>
-      </div>
-
+    </div>
+    <script src="{{ asset('/js/register_script.js') }}"></script>
 </body>
 </html>

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PersonController;
+use App\Http\Controllers\Ajax\AjaxController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +21,6 @@ Route::get('/', function () {
 });
 
 Route::get('/user/login', [UserController::class, 'getlogin']);
-Route::get('/user/register', [UserController::class, 'register']);
+// Route::get('/user/register', [PersonController::class, 'register']);
+Route::get('/user/register', [AjaxController::class, 'prefectures']);
+
