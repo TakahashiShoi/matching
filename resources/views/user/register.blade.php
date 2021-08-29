@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>新規会員登録</title>
     <link rel="stylesheet" href="{{ asset('css/register_style.css') }}">
+    
 </head>
 <body>
     <div class="container">
@@ -52,8 +53,8 @@
             {{-- {!! Form::select('prefecture',{$items->name},old('prefecture'),['class' => 'form-control','id' => 'prefecture','placeholder' => '▼都道府県']) !!} --}}
             {{-- 市区町村のプルダウンメニュー --}}
             <h4>お住まい</h4>
-            <form action="prefecture" old="prefecture" class="form-control" id="prefecture">
-                <select>
+            <form action="prefecture" old="prefecture" class="form-control" id="select">
+                <select id="prefecture">
                     <option value="" style="display: none;">▼都道府県</option>
                     @foreach ($items as $item)
                     <option>{{$item->name}}</option>
@@ -87,6 +88,7 @@
             </div>
         </form>
     </div>
-    <script src="{{ asset('/js/register_script.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/js/register_script.js"></script>
 </body>
 </html>

@@ -7,8 +7,10 @@
 // dribbble.com/josec
 
 $(function () {
+    alert("Hello");
     //都道府県 が変更された場合
-    $('[name=prefecture]').on('change', function () {
+    $('#prefecture').on('change', function () {
+        console.log('都道府県選択');
         //idが一桁の時はゼロうめする
         var prefecture_id = ('00' + $(this).val()).slice(-2);
         

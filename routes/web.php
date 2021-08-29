@@ -21,6 +21,6 @@ Route::get('/', function () {
 });
 
 Route::get('/user/login', [UserController::class, 'getlogin']);
-// Route::get('/user/register', [PersonController::class, 'register']);
-Route::get('/user/register', [AjaxController::class, 'prefectures']);
+Route::get('/user/register', [PersonController::class, 'register']);
+Route::post('/user/register', [AjaxController::class, 'prefectures']);
 
