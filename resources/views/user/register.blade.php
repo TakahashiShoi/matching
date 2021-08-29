@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>新規会員登録</title>
     <link rel="stylesheet" href="{{ asset('css/register_style.css') }}">
-    
+
 </head>
 <body>
     <div class="container">
@@ -57,7 +57,7 @@
                 <select id="prefecture">
                     <option value="" style="display: none;">▼都道府県</option>
                     @foreach ($items as $item)
-                    <option>{{$item->name}}</option>
+                    <option value="{{$item->id}}">{{$item->name}}</option>
                     @endforeach
                 </select>
             </form>

@@ -7,22 +7,21 @@
 // dribbble.com/josec
 
 $(function () {
-    alert("Hello");
     //都道府県 が変更された場合
     $('#prefecture').on('change', function () {
         console.log('都道府県選択');
         //idが一桁の時はゼロうめする
-        var prefecture_id = ('00' + $(this).val()).slice(-2);
-        
+        let prefecture_id = ('00' + $(this).val()).slice(-2);
+        console.log('prefecture_id:' + prefecture_id);
         $.ajax({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-            type: "POST",
-            url: "/user/register",
-            data: { "prefecture_id": prefecture_id },
+            type: "GET",
+            url: "https://www.land.mlit.go.jp/webland/api/CitySearch?area=" + prefecture_id,
             dataType: "json"
         }).done(function (data) {
+            console.log('市区町村取得OK');
             //selectタグ（子） の option値 を一旦削除
             $('#city option').remove();
             //戻って来た data の値をそれそれ optionタグ として生成し、
@@ -30,7 +29,7 @@ $(function () {
             $.each(data['data'], function (id) {
                 $('#city').append($('<option>').text(data['data'][id]['name']).attr('value', data['data'][id]['name']));
             });
-            
+
         }).fail(function () {
             console.log("失敗");
         });
