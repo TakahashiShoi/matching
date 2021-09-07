@@ -1,0 +1,580 @@
+
+@charset "utf-8";
+
+/* ---------- CSSリセット ---------- */
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+/* ---------- /CSSリセット ---------- */
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+html {
+	background-color: aqua;
+  height: 100%;
+}
+
+body {
+  max-width: 90vw;
+  height:300%;
+  width: 100%;
+  background-color: #ccc;
+  margin: 0 auto;
+  /* position: relative; */
+}
+
+header {
+  background-color: brown;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  z-index: 10;
+}
+
+.logo {
+  width: 90vw;
+  height: 5vw;
+  font-size: 30px;
+  text-align: center;
+  position: fixed;
+  inset: 0;
+  margin: 1vw auto;
+}
+
+/* ハンバーガーメニュー */
+.hamburger {
+  display: block;
+  position: fixed;
+  width: 42px;
+  height: 42px;
+  z-index: 3;
+  left: 0;
+  cursor: pointer;
+  text-align: center;
+  padding-top: 6px;
+  padding-right: 3px;
+  border-right: solid 1px;
+}
+  .hamburger span {
+	display : block;
+	position: absolute;
+	width   : 30px;
+	height  : 2px ;
+	left    : 6px;
+	background : #555;
+	-webkit-transition: 0.3s ease-in-out;
+	-moz-transition   : 0.3s ease-in-out;
+	transition        : 0.3s ease-in-out;
+  }
+  .hamburger span:nth-child(1) {
+	top: 10px;
+  }
+  .hamburger span:nth-child(2) {
+	top: 20px;
+  }
+  .hamburger span:nth-child(3) {
+	top: 30px;
+  }
+  
+  /* ナビ開いてる時のボタン */
+  .hamburger.active span:nth-child(1) {
+	top : 16px;
+	left: 6px;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform   : rotate(-45deg);
+	transform        : rotate(-45deg);
+  }
+  
+  .hamburger.active span:nth-child(2),
+  .hamburger.active span:nth-child(3) {
+	top: 16px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform   : rotate(45deg);
+	transform        : rotate(45deg);
+  }
+  
+  nav.globalMenuSp {
+    position: absolute;
+    z-index: 2;
+    top: 5vw;
+    left: 0vw;
+    color: #000;
+    background: center;
+    text-align: center;
+    transform: translateX(-135%);
+    transition: all 0.6s;
+    width: 30%;
+    height: 100%;
+  }
+  
+  nav.globalMenuSp ul {
+	background: #ccc;
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+  }
+  
+  nav.globalMenuSp ul li {
+	list-style-type: none;
+	padding: 0;
+	width: 100%;
+	border-bottom: 1px solid #fff;
+  background-color: blue;
+  }
+  nav.globalMenuSp ul li:last-child {
+	padding-bottom: 0;
+	border-bottom: none;
+  }
+  nav.globalMenuSp ul li:hover{
+	background :#ddd;
+  }
+  
+  nav.globalMenuSp ul li a {
+	display: block;
+	color: #000;
+	padding: 1em 0;
+	text-decoration :none;
+  }
+  
+  /* このクラスを、jQueryで付与・削除する */
+  nav.globalMenuSp.active {
+	transform: translateX(0%);
+  }
+/* /ハンバーガーメニュー */
+
+/* ---------- アカウント ---------- */
+  .account {
+    font-size: 17px;
+    position: inherit;
+    top: 8px;
+    margin: 1vw 6vw;
+  }
+/* ---------- /アカウント ---------- */
+
+/* ---------- 検索マーク ---------- */
+
+#search-wrap {
+position: absolute;/*絶対配置にして*/
+z-index: 2;/*最前面に設定。数字は変更可*/
+top:10px;
+right:10px;
+}
+
+/*テキスト入力input設定*/
+
+#search-text{
+-webkit-appearance: none;/*SafariやChromeのデフォルトの設定を無効*/
+width: 40px;/*テキスト入力エリアが伸びる前の横幅*/
+height: 27px;
+/* padding: 20px; */
+border: none;
+background: url(../img/icon_search.svg) no-repeat 17px center;/*虫眼鏡アイコンを背景に表示*/
+background-size: 25px 25px;
+transition: all 0.5s;/*transitionを使ってスムースに伸ばす*/
+outline: none;
+cursor: pointer;/*カーソルを指マークに*/
+}
+
+/*テキスト入力inputにフォーカスした時の形状*/
+#search-text:focus {
+width: 250px;/*テキスト入力エリアが伸びる後の横幅*/
+padding: 10px 0 10px 60px;
+background-color: #fff;
+box-shadow: 0 2px rgba(6,0,1,.26);
+}
+
+.gnavi{
+  display: flex;
+  float: right;
+  width: 30.5vw;
+  text-align: left;
+  /* margin: 0 0 0 auto; */
+  position: relative;
+  top: 0.5vw;
+  flex-wrap: wrap;
+  margin: 0;
+  list-style: none;
+}
+
+.gnavi li a{
+  display: block;
+  padding:10px 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.gnavi li{
+  margin-bottom:20px;
+  /* display: inline-block; */
+}
+
+/*==================================================
+　5-3-1 中心から外に線が伸びる（下部）
+===================================*/
+
+/* ---------- ナビゲーション ---------- */
+
+.gnavi li a{
+  /*線の基点とするためrelativeを指定*/
+position: relative;
+}
+
+.gnavi li.current a,
+.gnavi li a:hover{
+color:#0481A2;
+}
+
+.gnavi li a::after {
+  content: '';
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  /*線の形状*/
+  width: 80%;
+  height: 2px;
+  background:#0481A2;
+  /*アニメーションの指定*/
+  transition: all .3s;
+  transform: scale(0, 1);/*X方向0、Y方向1*/
+  transform-origin: center top;/*上部中央基点*/
+}
+
+/*現在地とhoverの設定*/
+.gnavi li.current a::after,
+.gnavi li a:hover::after {
+  transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+/* ---------- /ナビゲーション ---------- */
+
+/* ---------- /検索マーク ---------- */
+
+  /*tabの形状*/
+.tab{
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  top: 15vw;
+}
+
+.tab ul {
+  list-style: none;
+}
+
+.tab li a{
+  display: block;
+  background: #fff;
+  list-style: none;
+  margin: 0 0px;
+  padding: 10px 12px;
+  border: solid 1px black;
+  position: relative;
+}
+/*liにactiveクラスがついた時の形状*/
+.tab li.active a{
+	background: #26C6DA;
+}
+
+
+/*エリアの表示非表示と形状*/
+.area {
+  display: none;
+  opacity: 0;
+  background: #fff;
+  max-width: 80vw;
+  width: 100%;
+  height: 20vw;
+  padding: 7vw 5vw;
+  position: absolute;
+  top: 19vw;
+  left: 5vw;
+  border: solid 1px;
+}
+
+/*areaにis-activeというクラスがついた時の形状*/
+.area.is-active {
+    display: block;/*表示*/
+    animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes displayAnime{
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/*==================================================
+スライダーのためのcss
+===================================*/
+
+
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+  top: -4vw;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.slider img {
+    width:100%;/*スライダー内の画像を横幅100%に*/
+    height:auto;
+}
+
+/*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+
+.slider .slick-slide {
+    margin:0 10px;
+}
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev, 
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;/*矢印の色*/
+    border-right: 2px solid #666;/*矢印の色*/
+    height: 15px;
+    width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left: -4.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right: -4.5%;
+    transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+    text-align:center;
+  margin:7px 0 0 0;
+}
+
+.slick-dots li {
+    display:inline-block;
+  margin:0 5px;
+}
+
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    width:2px;/*ドットボタンのサイズ*/
+    height:15px;/*ドットボタンのサイズ*/
+    display:block;
+    border-radius:50%;
+    background:#ccc;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+    background:#333;/*ドットボタンの現在地表示の色*/
+}
+
+.details {
+  background-color: #e4405f;
+}
+
+.details h2 {
+  font-size: 16px;
+  height: 25px;
+}
+
+.details p {
+  font-size: 11px;
+  height: 22px;
+}
+
+/*========= レイアウトのためのCSS ===============*/
+
+
+/* ---------- フッター ---------- */
+
+footer {
+	/* position: -webkit-sticky; */
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+	background-color: #9E9E9E;
+	text-align: center;
+}
+footer .copyright {
+	float: left;
+	width: 50%;
+}
+footer .copyright p {
+	font-size: 0.7em;
+	line-height: 70px;
+	padding-left: 10%;
+	letter-spacing: 1px;
+	color: #ffffff;
+}
+footer .sns {
+	float: right;
+	width: 50%;
+}
+footer .sns a {
+	font-weight: bold;
+	line-height: 70px;
+	float: left;
+	-webkit-transition: all, 0.3s;
+	        transition: all, 0.3s;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+}
+footer .sns a:hover {
+	-webkit-transition: all, 0.3s;
+	        transition: all, 0.3s;
+	background-color: #222222;
+}
+footer .sns .insta {
+	font-size: 1.2em;
+	width: 20%;
+	background-color: #e4405f;
+}
+footer .sns .fb {
+	font-size: 1.2em;
+	width: 20%;
+	background-color: #3b5999;
+}
+footer .sns .tw {
+	font-size: 1.2em;
+	width: 20%;
+	background-color: #55acee;
+}
+footer .sns .contact {
+	font-size: 0.8em;
+	width: 40%;
+	background-color: #26C6DA;
+}
+@media (max-width: 480px) {
+	.contents {
+		margin-bottom: 200px;
+	}
+	footer {
+		height: auto;
+	}
+	footer .copyright {
+		width: 100%;
+	}
+	footer .copyright p {
+		padding: 0;
+		text-align: center;
+	}
+	footer .sns {
+		width: 100%;
+	}
+}
+
+/* ---------- /フッター ---------- */
