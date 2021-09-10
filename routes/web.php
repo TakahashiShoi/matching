@@ -25,4 +25,4 @@ Route::get('/user/login', [UserController::class, 'getlogin']);
 Route::get('/user/register', [PersonController::class, 'register']);
 Route::post('/user/register', [AjaxController::class, 'prefectures']);
 Route::get('/home/home', [HomeController::class, 'home']);
-
+Route::post('/user/register', [PersonController::class, 'register_post']);

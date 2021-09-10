@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Prefecture;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use App\Http\Requests\RegisterRequest;
 use Swift_Plugins_Loggers_EchoLogger;
 
 class PersonController extends Controller
@@ -20,6 +21,11 @@ class PersonController extends Controller
     {
         $items = Prefecture::all();
         Log::debug(var_export($items, true));
-        return view('user.register', ['items' => $items]);
+        return view('user.register', ['items' => $items],);
+    }
+
+    public function register_post(RegisterRequest $request)
+    {
+        return view('user.register',);
     }
 }
