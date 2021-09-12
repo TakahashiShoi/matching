@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Prefecture;
 use Illuminate\Http\Request;
+use Request as PostRequest;
 use Illuminate\Support\Facades\Log;
 use App\Http\Requests\RegisterRequest;
 use Swift_Plugins_Loggers_EchoLogger;
@@ -24,8 +25,14 @@ class PersonController extends Controller
         return view('user.register', ['items' => $items],);
     }
 
-    public function register_post(RegisterRequest $request)
+    public static function register_post(RegisterRequest $request)
     {
-        return view('user.register',);
+        $register_data = $request->all();
+        return view('user.register_2', compact('register_data'));
+    }
+
+    public function register_2(Request $request)
+    {
+        return view('user.register_2');
     }
 }

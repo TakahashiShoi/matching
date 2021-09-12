@@ -24,5 +24,8 @@ Route::get('/', function () {
 Route::get('/user/login', [UserController::class, 'getlogin']);
 Route::get('/user/register', [PersonController::class, 'register']);
 Route::post('/user/register', [AjaxController::class, 'prefectures']);
-Route::get('/home/home', [HomeController::class, 'home']);
 Route::post('/user/register', [PersonController::class, 'register_post']);
+Route::get('/user/register_2', [PersonController::class, 'register_2']);
+Route::post('/user/register_2', [PersonController::class, 'register_2']);
+
+Route::get('/home/home', [HomeController::class, 'home']);
